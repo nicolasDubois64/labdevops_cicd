@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       need-test:
-        description: "Test ?"
+        description: "Need Test ?"
         default: "false"
 
 jobs:
