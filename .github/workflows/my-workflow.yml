@@ -2,6 +2,10 @@ name: Manual install
 
 on:
   workflow_dispatch:
+    inputs:
+      need-test:
+        description: "Test ?"
+        default: "false"
 
 jobs:
   install:
@@ -20,6 +24,7 @@ jobs:
       run: npm install
     
     - name: Test application
+      if: ${{ github.event.inputs.need-test == 'true' }}
       run: npm test
     
     - name: Build application
